@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'core/theme/app_theme.dart';
-import 'features/feed/presentation/pages/feed_page.dart';
+import 'features/auth/presentation/pages/login_page.dart';
 
 void main() {
   runApp(
@@ -23,8 +23,8 @@ class FutbolPanoramaApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
-      // Ana akış sayfasını varsayılan giriş yap
-      home: const FeedPage(),
+      // Ana akış sayfasını Giriş sayfasına çevir
+      home: const LoginPage(),
     );
   }
 }
