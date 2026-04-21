@@ -1,42 +1,178 @@
+/* =========================================
+   GENEL AYARLAR: Ferahlık ve Ortalama
+========================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+  font-family: 'Segoe UI', system-ui, sans-serif; 
+  line-height: 1.8; 
+  background-color: #f4f7f6; /* Çok açık, göz yormayan ferah bir gri/mavi */
+  color: #2d3748; 
+}
+
+/* Tüm içeriği sayfanın tam ortasına hizalar */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* =========================================
+   HEADER & NAVİGASYON: Enerjik ve Renkli
+========================================= */
+header { 
+  width: 100%;
+  /* Çim yeşilinden açık yeşile dinamik futbol gradient'i */
+  background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%); 
+  color: white; 
+  padding: 2.5rem 1rem; 
+  text-align: center; 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+header h1 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
-.card {
-  padding: 2em;
+nav ul { 
+  list-style: none; 
+  display: flex; 
+  justify-content: center; 
+  gap: 2.5rem; 
+  margin-top: 1.5rem; 
 }
 
-.read-the-docs {
-  color: #888;
+nav a { 
+  color: white; 
+  text-decoration: none; 
+  font-weight: 600; 
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: all 0.3s ease; /* Yumuşak geçiş animasyonu */
+}
+
+nav a:hover { 
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px); /* Üzerine gelince hafifçe yukarı zıplar */
+}
+
+/* =========================================
+   ANA İÇERİK: Geniş, Ferah ve Ortalı
+========================================= */
+main { 
+  width: 100%;
+  max-width: 850px; /* İçeriğin çok yayılmasını engeller, okunabilirliği artırır */
+  margin: 3rem auto; 
+  padding: 0 1.5rem; 
+}
+
+/* Her bir bölüm (Form ve Akış) */
+section { 
+  background: white; 
+  padding: 2.5rem; 
+  border-radius: 16px; /* Daha yumuşak, modern köşeler */
+  margin-bottom: 3rem; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Ferahlık hissi veren derinlik gölgesi */
+}
+
+h2 { 
+  border-bottom: 3px solid #00b09b; 
+  padding-bottom: 0.8rem; 
+  margin-bottom: 2rem; 
+  color: #1a202c; 
+  font-size: 1.8rem;
+}
+
+/* =========================================
+   FORMLAR: Modern ve Dikkat Çekici
+========================================= */
+.form-group { margin-bottom: 1.5rem; }
+
+label { 
+  display: block; 
+  margin-bottom: 0.5rem; 
+  font-weight: 600; 
+  color: #4a5568;
+}
+
+input, textarea { 
+width: 100%; 
+  padding: 1rem; 
+  border: 2px solid #e2e8f0; 
+  border-radius: 8px; 
+  font-family: inherit; 
+  font-size: 1rem;
+  color: #1a202c; /* YENİ EKLENDİ: Yazı ve imleç rengini koyu yaptık */
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
+}
+
+input:focus, textarea:focus { 
+  border-color: #00b09b; 
+  background-color: white;
+  box-shadow: 0 0 0 4px rgba(0, 176, 155, 0.15); /* Focus olunca dışa doğru yeşil parlama */
+  outline: none; 
+}
+
+/* Aksiyon Butonu: Enerjik Gradient */
+button { 
+  background: linear-gradient(135deg, #FF416C 0%, #FF4B2B 100%); 
+  color: white; 
+  border: none; 
+  padding: 1rem 2.5rem; 
+  border-radius: 50px; /* Hap şeklinde modern buton */
+  cursor: pointer; 
+  font-size: 1.1rem; 
+  font-weight: bold; 
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(255, 75, 43, 0.3);
+  transition: all 0.3s ease;
+  display: block;
+  margin: 1rem 0 0 auto; /* Butonu sağa yaslar */
+}
+
+button:hover { 
+  transform: translateY(-3px); /* Hoverda buton havaya kalkar */
+  box-shadow: 0 8px 25px rgba(255, 75, 43, 0.4); 
+}
+
+/* =========================================
+   ANALİZ KARTLARI (AKIŞ): İnteraktif
+========================================= */
+article { 
+  background: white; 
+  padding: 1.5rem; 
+  border-radius: 12px; 
+  border-left: 6px solid #FF416C; /* Dinamik kırmızı/pembe vurgu çizgisi */
+  margin-bottom: 1.5rem; 
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+article:hover {
+  transform: translateX(10px); /* Üzerine gelince kart sağa doğru kayar (Dinamizm) */
+  box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+}
+
+article h3 { 
+  margin-bottom: 0.8rem; 
+  color: #2d3748; 
+  font-size: 1.3rem;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+footer { 
+  text-align: center; 
+  padding: 2rem; 
+  font-size: 0.9rem; 
+  color: #a0aec0; 
+  width: 100%;
+  margin-top: auto; /* Sayfa kısa olsa bile footeri en alta iter */
 }
