@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Color Palette */
+  --primary-green: #10B981;
+  --primary-green-hover: #059669;
+  
+  --bg-light: #F8FAFC;
+  --surface-light: #FFFFFF;
+  --border-light: #E2E8F0;
+  --text-main-light: #0F172A;
+  --text-muted-light: #64748B;
+  
+  --bg-dark: #0F172A;
+  --surface-dark: #1E293B;
+  --border-dark: #334155;
+  --text-main-dark: #F8FAFC;
+  --text-muted-dark: #94A3B8;
+
+  /* Default theme (light) */
+  --bg-color: var(--bg-light);
+  --surface-color: var(--surface-light);
+  --border-color: var(--border-light);
+  --text-main: var(--text-main-light);
+  --text-muted: var(--text-muted-light);
+
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: var(--bg-dark);
+    --surface-color: var(--surface-dark);
+    --border-color: var(--border-dark);
+    --text-main: var(--text-main-dark);
+    --text-muted: var(--text-muted-dark);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+}
+
+a {
+  color: var(--primary-green);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary-green-hover);
+}
+
+button {
+  font-family: var(--font-heading);
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: all 0.2s ease;
+}
+
+/* Base Utilities */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.card {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-green);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-green-hover);
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn-primary {
+    color: var(--bg-dark); /* Koyu modda buton yazısı daha koyu olsun app theme'deki gibi */
+  }
+}
