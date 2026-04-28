@@ -10,7 +10,8 @@ BEGIN
     COALESCE(new.raw_user_meta_data->>'name', 'İsimsiz Analist'), 
     50.0, -- Yeni üyeye varsayılan 50 (Ortalama) Güven Skoru
     ARRAY['Çaylak'] -- Array formatında varsayılan 'Çaylak' rozeti
-  );
+  )
+  ON CONFLICT (id) DO NOTHING;
   
   RETURN new;
 END;
